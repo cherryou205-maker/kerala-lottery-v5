@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Royal Lottery – Official 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#050a14;
+  --ink2:#08111f;
+  --royal:#c8a84b;
+  --royal2:#a8851c;
+  --royal3:#f0d080;
+  --crimson:#e8294a;
+  --emerald:#00d68f;
+  --sapphire:#4499ff;
+  --pearl:#eef2ff;
+  --muted:rgba(220,225,255,0.45);
+  --card:#0a1524;
+  --card2:#0d1c30;
+  --border:rgba(200,168,75,0.2);
+  --radius:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--ink);
+  color:var(--pearl);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── BACKGROUND ── */
+.bg-layer{position:fixed;inset:0;z-index:0;pointer-events:none}
+.bg-layer::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 100% 60% at 0% 0%,rgba(68,153,255,0.06) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 80%,rgba(200,168,75,0.07) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 40%,rgba(232,41,74,0.03) 0%,transparent 60%),
+    #050a14;
+}
+.bg-layer::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle,rgba(200,168,75,0.05) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+
+/* ── DECORATIVE LINES ── */
+.deco-lines{
+  position:fixed;top:0;left:50%;transform:translateX(-50%);
+  width:min(480px,100%);height:100%;pointer-events:none;z-index:0;
+  overflow:hidden;
+}
+.deco-lines::before,.deco-lines::after{
+  content:'';position:absolute;top:0;width:1px;height:100%;
+  background:linear-gradient(180deg,transparent,rgba(200,168,75,0.1) 20%,rgba(200,168,75,0.1) 80%,transparent);
+}
+.deco-lines::before{left:14px}
+.deco-lines::after{right:14px}
+
+.page{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px 100px}
+
+/* ── TOP STRIP ── */
+.top-strip{
+  background:linear-gradient(90deg,var(--royal2),var(--royal),var(--royal3),var(--royal),var(--royal2));
+  background-size:300% auto;
+  animation:stripShimmer 4s linear infinite;
+  text-align:center;font-size:10px;font-weight:700;letter-spacing:3px;
+  color:#000;padding:6px 0;text-transform:uppercase;
+  position:sticky;top:0;z-index:100;
+}
+@keyframes stripShimmer{0%{background-position:0%}100%{background-position:300%}}
+
+/* ── HEADER ── */
+.header{text-align:center;padding:28px 0 18px;position:relative}
+.live-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(0,214,143,0.08);border:1px solid rgba(0,214,143,0.25);
+  border-radius:30px;padding:5px 16px;font-size:10px;font-weight:700;
+  color:var(--emerald);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;
+}
+.live-pulse{
+  width:7px;height:7px;border-radius:50%;background:var(--emerald);
+  animation:lpulse 1.4s ease infinite;
+}
+@keyframes lpulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,214,143,0.7)}
+  50%{box-shadow:0 0 0 8px rgba(0,214,143,0)}
+}
+
+/* ── EMBLEM ── */
+.emblem{
+  width:90px;height:90px;margin:0 auto 16px;position:relative;
+}
+.emblem-outer{
+  width:90px;height:90px;border-radius:50%;
+  background:conic-gradient(var(--royal) 0deg,var(--royal3) 60deg,var(--royal2) 120deg,var(--royal3) 180deg,var(--royal) 240deg,var(--royal3) 300deg,var(--royal) 360deg);
+  display:flex;align-items:center;justify-content:center;
+  animation:emblemSpin 20s linear infinite;
+  box-shadow:0 0 0 3px rgba(200,168,75,0.15),0 0 50px rgba(200,168,75,0.2);
+}
+@keyframes emblemSpin{to{transform:rotate(360deg)}}
+.emblem-inner{
+  width:74px;height:74px;border-radius:50%;
+  background:linear-gradient(135deg,#0e1c30,#152540);
+  display:flex;align-items:center;justify-content:center;
+  font-size:34px;
+  animation:emblemCounter 20s linear infinite;
+}
+@keyframes emblemCounter{to{transform:rotate(-360deg)}}
+
+.title-wrap{margin-bottom:4px}
+.title-main{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-weight:800;line-height:1.05;
+  background:linear-gradient(135deg,var(--royal2) 0%,var(--royal3) 35%,#fff8e0 50%,var(--royal3) 65%,var(--royal2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  background-size:200% auto;animation:titleShimmer 4s ease infinite;
+  letter-spacing:1px;
+}
+@keyframes titleShimmer{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.title-sub{
+  font-size:10px;color:var(--muted);letter-spacing:4px;
+  text-transform:uppercase;margin-top:5px;
+}
+
+/* ── DIVIDER ORNAMENT ── */
+.ornament{
+  display:flex;align-items:center;gap:10px;margin:16px 0;
+}
+.ornament-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.ornament-icon{font-size:14px;opacity:0.6}
+
+/* ── PRIZE SECTION ── */
+.prize-section{margin:8px 0 16px}
+
+.prize-main{
+  background:linear-gradient(145deg,#071208 0%,#0c1e0e 40%,#071208 100%);
+  border:1px solid rgba(0,214,143,0.2);
+  border-radius:22px;padding:24px 18px 20px;text-align:center;
+  position:relative;overflow:hidden;
+  box-shadow:0 0 80px rgba(0,214,143,0.06),inset 0 1px 0 rgba(0,214,143,0.1);
+}
+.prize-main::before{
+  content:'';position:absolute;inset:0;border-radius:22px;
+  background:conic-gradient(transparent 0deg,rgba(0,214,143,0.03) 50deg,transparent 100deg,rgba(0,214,143,0.02) 200deg,transparent 250deg);
+  animation:rotateConic 15s linear infinite;
+}
+@keyframes rotateConic{to{transform:rotate(360deg)}}
+
+.prize-eyebrow{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--emerald);font-weight:700;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.prize-eyebrow::before,.prize-eyebrow::after{
+  content:'';width:24px;height:1px;background:rgba(0,214,143,0.4);
+}
+.prize-crown-icon{font-size:26px;margin-bottom:6px;display:block;animation:crownBob 3s ease-in-out infinite}
+@keyframes crownBob{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.08)}}
+
+.prize-amount{
+  font-family:'Cormorant Garamond',serif;
+  font-size:58px;font-weight:800;line-height:1;
+  background:linear-gradient(180deg,#a8ff90,#00d68f,#00aa6c);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:amtGlow 2s ease-in-out infinite alternate;
+  margin:6px 0;
+}
+@keyframes amtGlow{from{filter:brightness(1) drop-shadow(0 0 0 transparent)}to{filter:brightness(1.3) drop-shadow(0 0 20px rgba(0,214,143,0.4))}}
+
+.prize-desc{font-size:12px;color:rgba(180,255,220,0.5);margin-bottom:16px}
+
+.prize-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.prize-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;padding:12px 10px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.prize-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  border-radius:14px 14px 0 0;
+}
+.prize-card.gold::before{background:linear-gradient(90deg,transparent,var(--royal),transparent)}
+.prize-card.silver::before{background:linear-gradient(90deg,transparent,#aaa,transparent)}
+.p-medal{font-size:18px;margin-bottom:4px;display:block}
+.p-rank{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.p-amt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700}
+.prize-card.gold .p-amt{color:var(--royal)}
+.prize-card.silver .p-amt{color:#c0c8d0}
+.p-sub{font-size:9px;color:var(--muted);margin-top:3px}
+
+/* ── TIMER ── */
+.timer-section{
+  background:var(--card);
+  border:1px solid rgba(232,41,74,0.18);
+  border-radius:18px;padding:14px 16px;margin:12px 0;
+  display:flex;align-items:center;gap:14px;
+  position:relative;overflow:hidden;
+}
+.timer-section::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,transparent,var(--crimson),transparent);
+  border-radius:3px;
+}
+.timer-icon-wrap{font-size:24px;flex-shrink:0}
+.timer-content{flex:1}
+.timer-label{
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--crimson);font-weight:700;
+  display:flex;align-items:center;gap:6px;margin-bottom:8px;
+}
+.blink-circle{width:6px;height:6px;border-radius:50%;background:var(--crimson);animation:blinkIt 0.9s step-end infinite}
+@keyframes blinkIt{0%,100%{opacity:1}50%{opacity:0}}
+.timer-digits{display:flex;align-items:center;gap:5px}
+.tdigit{
+  background:linear-gradient(180deg,#101d30,#080f1a);
+  border:1px solid rgba(200,168,75,0.18);
+  border-radius:10px;padding:5px 8px;text-align:center;min-width:46px;
+}
+.tdigit-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:700;color:var(--royal);
+  display:block;line-height:1;
+}
+.tdigit-lbl{font-size:8px;color:var(--muted);letter-spacing:1.5px;display:block;margin-top:2px}
+.tcolon{font-size:20px;color:var(--royal);opacity:0.4;animation:blinkIt 0.9s step-end infinite;line-height:1}
+
+/* ── TICKETS ── */
+.tickets-section{margin:14px 0}
+
+.section-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;
+}
+.section-title{
+  font-size:11px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--royal);
+  display:flex;align-items:center;gap:8px;
+}
+.section-title-bar{width:4px;height:18px;background:var(--royal);border-radius:2px}
+
+.info-strip{
+  background:rgba(68,153,255,0.06);
+  border:1px solid rgba(68,153,255,0.18);
+  border-radius:12px;padding:9px 14px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;margin-bottom:12px;
+}
+.info-strip .price-tag{color:var(--pearl);font-weight:700}
+.info-strip .min-tag{color:var(--crimson);font-weight:700;font-size:11px}
+
+/* Search */
+.search-container{position:relative;margin-bottom:10px}
+.search-container svg{position:absolute;left:13px;top:50%;transform:translateY(-50%)}
+.search-input{
+  width:100%;
+  background:rgba(255,255,255,0.04);
+  border:1.5px solid rgba(200,168,75,0.18);
+  border-radius:13px;
+  padding:12px 14px 12px 40px;
+  font-size:14px;font-family:'Outfit',sans-serif;
+  color:var(--pearl);outline:none;
+  transition:border-color 0.25s,box-shadow 0.25s;
+}
+.search-input::placeholder{color:rgba(200,210,240,0.28);font-size:13px}
+.search-input:focus{border-color:var(--royal);box-shadow:0 0 24px rgba(200,168,75,0.08)}
+
+/* Counter bar */
+.counter-bar{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:10px;padding:7px 14px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;margin-bottom:10px;
+}
+.cbar-total{color:var(--muted)}
+.cbar-sel{color:var(--emerald);font-weight:700}
+
+/* Ticket grid */
+.ticket-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+  max-height:400px;overflow-y:auto;
+  padding-right:3px;margin-bottom:14px;
+}
+.ticket-grid::-webkit-scrollbar{width:3px}
+.ticket-grid::-webkit-scrollbar-track{background:transparent}
+.ticket-grid::-webkit-scrollbar-thumb{background:rgba(200,168,75,0.2);border-radius:3px}
+
+.ticket{
+  background:var(--card2);
+  border:1.5px solid rgba(255,255,255,0.05);
+  border-radius:13px;padding:9px 4px 8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:5px;cursor:pointer;position:relative;
+  transition:all 0.15s ease;user-select:none;
+}
+.ticket .t-icon{font-size:14px;line-height:1;opacity:0.7}
+.ticket .t-num{
+  font-size:10px;font-weight:600;
+  color:rgba(200,210,240,0.55);
+  font-family:'Outfit',sans-serif;letter-spacing:0.3px;
+  white-space:nowrap;
+}
+.ticket:hover{
+  border-color:rgba(200,168,75,0.5);
+  background:#0f1e35;transform:scale(1.04);
+}
+.ticket:hover .t-num{color:var(--pearl)}
+.ticket:hover .t-icon{opacity:1}
+.ticket.sel{
+  border-color:var(--royal);
+  background:linear-gradient(135deg,#1a1100,#261900);
+  transform:scale(1.03);
+  box-shadow:0 0 16px rgba(200,168,75,0.22);
+}
+.ticket.sel .t-num{color:var(--royal)}
+.ticket.sel .t-icon{opacity:1}
+.ticket.sel::after{
+  content:'✓';position:absolute;top:4px;right:7px;
+  font-size:9px;color:var(--emerald);font-weight:900;
+}
+
+/* Chips */
+.chips-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 10px}
+.chip{
+  background:rgba(200,168,75,0.07);
+  border:1px solid rgba(200,168,75,0.22);
+  border-radius:8px;padding:4px 9px;
+  font-size:11px;color:var(--royal);font-weight:700;
+  display:flex;align-items:center;gap:4px;
+}
+.chip-rm{cursor:pointer;color:var(--crimson);font-size:13px;line-height:1;margin-left:2px}
+
+.warn-box{
+  display:none;text-align:center;font-size:12px;color:var(--crimson);font-weight:600;
+  margin:8px 0;padding:10px 14px;border-radius:11px;
+  border:1px dashed rgba(232,41,74,0.3);background:rgba(232,41,74,0.06);
+}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* ── SUMMARY ── */
+.summary-card{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:18px;padding:18px;margin:10px 0;
+  position:relative;overflow:hidden;
+}
+.summary-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--royal),transparent);
+}
+.srow{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:14px;
+}
+.srow:last-child{border-bottom:none}
+.srow .sl{color:var(--muted)}
+.srow .sv{font-weight:700;color:var(--pearl)}
+.srow.stotal .sl{color:var(--royal);font-weight:700;font-size:15px}
+.srow.stotal .sv{
+  color:var(--royal);font-size:24px;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* ── WHATSAPP BUTTON ── */
+.wa-btn{
+  width:100%;padding:18px 20px;border-radius:20px;border:none;
+  background:linear-gradient(135deg,#0a6b40 0%,#1db954 40%,#25d366 60%,#1db954 80%,#0a6b40 100%);
+  background-size:200% auto;
+  color:#fff;font-family:'Outfit',sans-serif;
+  font-size:17px;font-weight:700;letter-spacing:0.4px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:6px;
+  transition:all 0.3s;
+  box-shadow:0 10px 40px rgba(37,211,102,0.25);
+  animation:waPulse 2.8s ease infinite;
+  position:relative;overflow:hidden;
+}
+.wa-btn::before{
+  content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);
+  animation:waGloss 3.5s 1.5s infinite;
+}
+@keyframes waGloss{to{left:160%}}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 10px 40px rgba(37,211,102,0.25)}
+  50%{box-shadow:0 10px 55px rgba(37,211,102,0.45)}
+}
+.wa-btn:hover{transform:translateY(-2px);background-position:right center}
+.wa-icon{font-size:22px}
+
+/* ── TRUST ROW ── */
+.trust-row{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin:16px 0 10px;
+}
+.trust-item{
+  display:flex;align-items:center;gap:5px;
+  font-size:10px;color:var(--muted);font-weight:600;letter-spacing:0.5px;
+}
+
+.divider{height:1px;background:rgba(255,255,255,0.05);margin:12px 0}
+
+/* ── PAYMENT ── */
+.pay-section{text-align:center;margin:10px 0}
+.pay-label{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.pay-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.pay-chip{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.09);
+  border-radius:10px;padding:7px 18px;
+  font-size:13px;font-weight:600;color:var(--pearl);
+}
+
+/* ── NOTICE ── */
+.notice-box{
+  background:rgba(200,168,75,0.04);
+  border-left:3px solid var(--royal2);
+  border-radius:0 12px 12px 0;
+  padding:11px 14px;font-size:11.5px;
+  color:rgba(240,210,110,0.75);line-height:1.7;margin:12px 0;
+}
+
+/* ── WA FLOAT ── */
+.wa-float{
+  position:fixed;bottom:24px;right:16px;z-index:999;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,#128c7e,#25d366);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;cursor:pointer;text-decoration:none;
+  box-shadow:0 6px 24px rgba(37,211,102,0.4);
+  animation:floatBounce 2.2s ease-in-out infinite;
+}
+@keyframes floatBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.wa-badge{
+  position:absolute;top:-4px;right:-4px;
+  background:var(--crimson);color:#fff;
+  font-size:9px;font-weight:800;
+  width:19px;height:19px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--ink);
+}
+
+/* ── FOOTER ── */
+.footer{
+  text-align:center;font-size:10px;
+  color:rgba(200,210,240,0.18);
+  margin-top:28px;padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  letter-spacing:0.5px;
+}
+
+/* ── CONFETTI ── */
+.confetti-layer{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
+.cp{position:absolute;animation:cfDrop linear forwards}
+@keyframes cfDrop{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(540deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="bg-layer"></div>
+<div class="deco-lines"></div>
+<div class="confetti-layer" id="confettiLayer"></div>
+
+<!-- Top strip -->
+<div class="top-strip">⚡ Limited Time Offer · Official Government Lottery 2026 · Book Now ⚡</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="live-pill"><span class="live-pulse"></span> Live Draw 2026</div>
+    <div class="emblem">
+      <div class="emblem-outer">
+        <div class="emblem-inner">🏅</div>
+      </div>
+    </div>
+    <div class="title-wrap">
+      <div class="title-main">KERALA ROYAL<br>LOTTERY</div>
+      <div class="title-sub">Official Government Draw · 2026</div>
+    </div>
+  </div>
+
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-icon">◆</div>
+    <div class="ornament-line"></div>
+  </div>
+
+  <!-- PRIZES -->
+  <div class="prize-section">
+    <div class="prize-main">
+      <div class="prize-eyebrow">Grand Jackpot Prize</div>
+      <span class="prize-crown-icon">👑</span>
+      <div class="prize-amount">₹25 Crore</div>
+      <div class="prize-desc">Keralalotteries.net Official Draw 2026</div>
+      <div class="prize-cards">
+        <div class="prize-card gold">
+          <span class="p-medal">🥈</span>
+          <div class="p-rank">2nd Prize</div>
+          <div class="p-amt">₹25 Lakh</div>
+          <div class="p-sub">Second Winner</div>
+        </div>
+        <div class="prize-card silver">
+          <span class="p-medal">🥉</span>
+          <div class="p-rank">3rd Prize</div>
+          <div class="p-amt">₹8 Lakh</div>
+          <div class="p-sub">Third Winner</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMER -->
+  <div class="timer-section">
+    <div class="timer-icon-wrap">⏳</div>
+    <div class="timer-content">
+      <div class="timer-label">
+        <span class="blink-circle"></span>
+        OFFER BAND HONE MEIN
+      </div>
+      <div class="timer-digits">
+        <div class="tdigit"><span class="tdigit-num" id="t-h">00</span><span class="tdigit-lbl">HRS</span></div>
+        <div class="tcolon">:</div>
+        <div class="tdigit"><span class="tdigit-num" id="t-m">14</span><span class="tdigit-lbl">MIN</span></div>
+        <div class="tcolon">:</div>
+        <div class="tdigit"><span class="tdigit-num" id="t-s">59</span><span class="tdigit-lbl">SEC</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKETS SECTION -->
+  <div class="tickets-section">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-title-bar"></div>
+        🎟️ Ticket Chunein
+      </div>
+    </div>
+
+    <div class="info-strip">
+      <span>💰 Price: <span class="price-tag">₹40 / ticket</span></span>
+      <span class="min-tag">⚠️ Min. 3 Required</span>
+    </div>
+
+    <div class="search-container">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(200,168,75,0.5)" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="searchBox" placeholder="Ticket search karein... (e.g. KL 654)" oninput="filterTickets()">
+    </div>
+
+    <div class="counter-bar">
+      <span class="cbar-total" id="cbarTotal">📋 Total: 0</span>
+      <span class="cbar-sel" id="cbarSel">✅ Selected: 0</span>
+    </div>
+
+    <div class="ticket-grid" id="ticketGrid">
+<div class="ticket" onclick="T(this,'KL 654785')"><span class="t-icon">🎟️</span><span class="t-num">KL 654785</span></div>
+<div class="ticket" onclick="T(this,'KL 465923')"><span class="t-icon">🎟️</span><span class="t-num">KL 465923</span></div>
+<div class="ticket" onclick="T(this,'KL 416371')"><span class="t-icon">🎟️</span><span class="t-num">KL 416371</span></div>
+<div class="ticket" onclick="T(this,'KL 461545')"><span class="t-icon">🎟️</span><span class="t-num">KL 461545</span></div>
+<div class="ticket" onclick="T(this,'KL 541441')"><span class="t-icon">🎟️</span><span class="t-num">KL 541441</span></div>
+<div class="ticket" onclick="T(this,'KL 647671')"><span class="t-icon">🎟️</span><span class="t-num">KL 647671</span></div>
+<div class="ticket" onclick="T(this,'KL242626')"><span class="t-icon">🎟️</span><span class="t-num">KL242626</span></div>
+<div class="ticket" onclick="T(this,'KL262652')"><span class="t-icon">🎟️</span><span class="t-num">KL262652</span></div>
+<div class="ticket" onclick="T(this,'KL266565')"><span class="t-icon">🎟️</span><span class="t-num">KL266565</span></div>
+<div class="ticket" onclick="T(this,'KL540450')"><span class="t-icon">🎟️</span><span class="t-num">KL540450</span></div>
+<div class="ticket" onclick="T(this,'KL525228')"><span class="t-icon">🎟️</span><span class="t-num">KL525228</span></div>
+<div class="ticket" onclick="T(this,'KL572757')"><span class="t-icon">🎟️</span><span class="t-num">KL572757</span></div>
+<div class="ticket" onclick="T(this,'KL722755')"><span class="t-icon">🎟️</span><span class="t-num">KL722755</span></div>
+<div class="ticket" onclick="T(this,'KL638666')"><span class="t-icon">🎟️</span><span class="t-num">KL638666</span></div>
+<div class="ticket" onclick="T(this,'KL668885')"><span class="t-icon">🎟️</span><span class="t-num">KL668885</span></div>
+<div class="ticket" onclick="T(this,'KL227272')"><span class="t-icon">🎟️</span><span class="t-num">KL227272</span></div>
+<div class="ticket" onclick="T(this,'KL657955')"><span class="t-icon">🎟️</span><span class="t-num">KL657955</span></div>
+<div class="ticket" onclick="T(this,'KL555888')"><span class="t-icon">🎟️</span><span class="t-num">KL555888</span></div>
+<div class="ticket" onclick="T(this,'KL545454')"><span class="t-icon">🎟️</span><span class="t-num">KL545454</span></div>
+<div class="ticket" onclick="T(this,'KL288988')"><span class="t-icon">🎟️</span><span class="t-num">KL288988</span></div>
+<div class="ticket" onclick="T(this,'KL517874')"><span class="t-icon">🎟️</span><span class="t-num">KL517874</span></div>
+<div class="ticket" onclick="T(this,'KL451444')"><span class="t-icon">🎟️</span><span class="t-num">KL451444</span></div>
+<div class="ticket" onclick="T(this,'KL878689')"><span class="t-icon">🎟️</span><span class="t-num">KL878689</span></div>
+<div class="ticket" onclick="T(this,'KL652971')"><span class="t-icon">🎟️</span><span class="t-num">KL652971</span></div>
+<div class="ticket" onclick="T(this,'KL891898')"><span class="t-icon">🎟️</span><span class="t-num">KL891898</span></div>
+<div class="ticket" onclick="T(this,'KL877796')"><span class="t-icon">🎟️</span><span class="t-num">KL877796</span></div>
+<div class="ticket" onclick="T(this,'KL897991')"><span class="t-icon">🎟️</span><span class="t-num">KL897991</span></div>
+<div class="ticket" onclick="T(this,'KL989995')"><span class="t-icon">🎟️</span><span class="t-num">KL989995</span></div>
+<div class="ticket" onclick="T(this,'KL562595')"><span class="t-icon">🎟️</span><span class="t-num">KL562595</span></div>
+<div class="ticket" onclick="T(this,'KL997175')"><span class="t-icon">🎟️</span><span class="t-num">KL997175</span></div>
+<div class="ticket" onclick="T(this,'KL998292')"><span class="t-icon">🎟️</span><span class="t-num">KL998292</span></div>
+<div class="ticket" onclick="T(this,'KL898928')"><span class="t-icon">🎟️</span><span class="t-num">KL898928</span></div>
+<div class="ticket" onclick="T(this,'KL999891')"><span class="t-icon">🎟️</span><span class="t-num">KL999891</span></div>
+<div class="ticket" onclick="T(this,'KLK65959')"><span class="t-icon">🎟️</span><span class="t-num">KLK65959</span></div>
+<div class="ticket" onclick="T(this,'KL999595')"><span class="t-icon">🎟️</span><span class="t-num">KL999595</span></div>
+<div class="ticket" onclick="T(this,'KL 541654')"><span class="t-icon">🎟️</span><span class="t-num">KL 541654</span></div>
+<div class="ticket" onclick="T(this,'KL 546545')"><span class="t-icon">🎟️</span><span class="t-num">KL 546545</span></div>
+<div class="ticket" onclick="T(this,'KL 365478')"><span class="t-icon">🎟️</span><span class="t-num">KL 365478</span></div>
+<div class="ticket" onclick="T(this,'KL 754826')"><span class="t-icon">🎟️</span><span class="t-num">KL 754826</span></div>
+<div class="ticket" onclick="T(this,'KL 321478')"><span class="t-icon">🎟️</span><span class="t-num">KL 321478</span></div>
+<div class="ticket" onclick="T(this,'KL 321587')"><span class="t-icon">🎟️</span><span class="t-num">KL 321587</span></div>
+<div class="ticket" onclick="T(this,'KL 247558')"><span class="t-icon">🎟️</span><span class="t-num">KL 247558</span></div>
+<div class="ticket" onclick="T(this,'KL 782145')"><span class="t-icon">🎟️</span><span class="t-num">KL 782145</span></div>
+<div class="ticket" onclick="T(this,'KL 985476')"><span class="t-icon">🎟️</span><span class="t-num">KL 985476</span></div>
+<div class="ticket" onclick="T(this,'KL 357896')"><span class="t-icon">🎟️</span><span class="t-num">KL 357896</span></div>
+<div class="ticket" onclick="T(this,'KL 784512')"><span class="t-icon">🎟️</span><span class="t-num">KL 784512</span></div>
+<div class="ticket" onclick="T(this,'KL 125478')"><span class="t-icon">🎟️</span><span class="t-num">KL 125478</span></div>
+<div class="ticket" onclick="T(this,'KL 985623')"><span class="t-icon">🎟️</span><span class="t-num">KL 985623</span></div>
+<div class="ticket" onclick="T(this,'KL 654789')"><span class="t-icon">🎟️</span><span class="t-num">KL 654789</span></div>
+<div class="ticket" onclick="T(this,'KL 123654')"><span class="t-icon">🎟️</span><span class="t-num">KL 123654</span></div>
+<div class="ticket" onclick="T(this,'KL 789632')"><span class="t-icon">🎟️</span><span class="t-num">KL 789632</span></div>
+<div class="ticket" onclick="T(this,'KL 456258')"><span class="t-icon">🎟️</span><span class="t-num">KL 456258</span></div>
+<div class="ticket" onclick="T(this,'KL 745632')"><span class="t-icon">🎟️</span><span class="t-num">KL 745632</span></div>
+<div class="ticket" onclick="T(this,'KL 569874')"><span class="t-icon">🎟️</span><span class="t-num">KL 569874</span></div>
+<div class="ticket" onclick="T(this,'KL 525252')"><span class="t-icon">🎟️</span><span class="t-num">KL 525252</span></div>
+<div class="ticket" onclick="T(this,'KL 363636')"><span class="t-icon">🎟️</span><span class="t-num">KL 363636</span></div>
+<div class="ticket" onclick="T(this,'KL 969696')"><span class="t-icon">🎟️</span><span class="t-num">KL 969696</span></div>
+<div class="ticket" onclick="T(this,'KL 265478')"><span class="t-icon">🎟️</span><span class="t-num">KL 265478</span></div>
+<div class="ticket" onclick="T(this,'KL 687459')"><span class="t-icon">🎟️</span><span class="t-num">KL 687459</span></div>
+<div class="ticket" onclick="T(this,'KL 879563')"><span class="t-icon">🎟️</span><span class="t-num">KL 879563</span></div>
+<div class="ticket" onclick="T(this,'KL 933255')"><span class="t-icon">🎟️</span><span class="t-num">KL 933255</span></div>
+<div class="ticket" onclick="T(this,'KL 785447')"><span class="t-icon">🎟️</span><span class="t-num">KL 785447</span></div>
+<div class="ticket" onclick="T(this,'KL 554875')"><span class="t-icon">🎟️</span><span class="t-num">KL 554875</span></div>
+<div class="ticket" onclick="T(this,'KL 366599')"><span class="t-icon">🎟️</span><span class="t-num">KL 366599</span></div>
+<div class="ticket" onclick="T(this,'KL 215626')"><span class="t-icon">🎟️</span><span class="t-num">KL 215626</span></div>
+<div class="ticket" onclick="T(this,'KL 541988')"><span class="t-icon">🎟️</span><span class="t-num">KL 541988</span></div>
+<div class="ticket" onclick="T(this,'KL 516547')"><span class="t-icon">🎟️</span><span class="t-num">KL 516547</span></div>
+<div class="ticket" onclick="T(this,'KL 648678')"><span class="t-icon">🎟️</span><span class="t-num">KL 648678</span></div>
+<div class="ticket" onclick="T(this,'KL 416871')"><span class="t-icon">🎟️</span><span class="t-num">KL 416871</span></div>
+<div class="ticket" onclick="T(this,'KL 514861')"><span class="t-icon">🎟️</span><span class="t-num">KL 514861</span></div>
+<div class="ticket" onclick="T(this,'KL 652681')"><span class="t-icon">🎟️</span><span class="t-num">KL 652681</span></div>
+<div class="ticket" onclick="T(this,'KL 541878')"><span class="t-icon">🎟️</span><span class="t-num">KL 541878</span></div>
+<div class="ticket" onclick="T(this,'KL 325498')"><span class="t-icon">🎟️</span><span class="t-num">KL 325498</span></div>
+<div class="ticket" onclick="T(this,'KL 359688')"><span class="t-icon">🎟️</span><span class="t-num">KL 359688</span></div>
+<div class="ticket" onclick="T(this,'KL 538771')"><span class="t-icon">🎟️</span><span class="t-num">KL 538771</span></div>
+<div class="ticket" onclick="T(this,'KL 241688')"><span class="t-icon">🎟️</span><span class="t-num">KL 241688</span></div>
+<div class="ticket" onclick="T(this,'KL 241867')"><span class="t-icon">🎟️</span><span class="t-num">KL 241867</span></div>
+<div class="ticket" onclick="T(this,'KL 251895')"><span class="t-icon">🎟️</span><span class="t-num">KL 251895</span></div>
+<div class="ticket" onclick="T(this,'KL 539886')"><span class="t-icon">🎟️</span><span class="t-num">KL 539886</span></div>
+<div class="ticket" onclick="T(this,'KL 571867')"><span class="t-icon">🎟️</span><span class="t-num">KL 571867</span></div>
+<div class="ticket" onclick="T(this,'KL 325985')"><span class="t-icon">🎟️</span><span class="t-num">KL 325985</span></div>
+<div class="ticket" onclick="T(this,'KL 596867')"><span class="t-icon">🎟️</span><span class="t-num">KL 596867</span></div>
+<div class="ticket" onclick="T(this,'KL 518778')"><span class="t-icon">🎟️</span><span class="t-num">KL 518778</span></div>
+<div class="ticket" onclick="T(this,'KL 479678')"><span class="t-icon">🎟️</span><span class="t-num">KL 479678</span></div>
+<div class="ticket" onclick="T(this,'KL 658698')"><span class="t-icon">🎟️</span><span class="t-num">KL 658698</span></div>
+<div class="ticket" onclick="T(this,'KL 265697')"><span class="t-icon">🎟️</span><span class="t-num">KL 265697</span></div>
+<div class="ticket" onclick="T(this,'KL 489772')"><span class="t-icon">🎟️</span><span class="t-num">KL 489772</span></div>
+<div class="ticket" onclick="T(this,'KL 254867')"><span class="t-icon">🎟️</span><span class="t-num">KL 254867</span></div>
+<div class="ticket" onclick="T(this,'KL 519717')"><span class="t-icon">🎟️</span><span class="t-num">KL 519717</span></div>
+<div class="ticket" onclick="T(this,'KL 555555')"><span class="t-icon">🎟️</span><span class="t-num">KL 555555</span></div>
+<div class="ticket" onclick="T(this,'KL 654955')"><span class="t-icon">🎟️</span><span class="t-num">KL 654955</span></div>
+<div class="ticket" onclick="T(this,'KL 256187')"><span class="t-icon">🎟️</span><span class="t-num">KL 256187</span></div>
+<div class="ticket" onclick="T(this,'KL 233248')"><span class="t-icon">🎟️</span><span class="t-num">KL 233248</span></div>
+<div class="ticket" onclick="T(this,'KL 877718')"><span class="t-icon">🎟️</span><span class="t-num">KL 877718</span></div>
+<div class="ticket" onclick="T(this,'KL657897')"><span class="t-icon">🎟️</span><span class="t-num">KL657897</span></div>
+<div class="ticket" onclick="T(this,'KL418711')"><span class="t-icon">🎟️</span><span class="t-num">KL418711</span></div>
+<div class="ticket" onclick="T(this,'KL987820')"><span class="t-icon">🎟️</span><span class="t-num">KL987820</span></div>
+<div class="ticket" onclick="T(this,'KL987841')"><span class="t-icon">🎟️</span><span class="t-num">KL987841</span></div>
+<div class="ticket" onclick="T(this,'KL987862')"><span class="t-icon">🎟️</span><span class="t-num">KL987862</span></div>
+<div class="ticket" onclick="T(this,'KL987876')"><span class="t-icon">🎟️</span><span class="t-num">KL987876</span></div>
+<div class="ticket" onclick="T(this,'KL987102')"><span class="t-icon">🎟️</span><span class="t-num">KL987102</span></div>
+<div class="ticket" onclick="T(this,'KL987123')"><span class="t-icon">🎟️</span><span class="t-num">KL987123</span></div>
+<div class="ticket" onclick="T(this,'KL987821')"><span class="t-icon">🎟️</span><span class="t-num">KL987821</span></div>
+<div class="ticket" onclick="T(this,'KL987842')"><span class="t-icon">🎟️</span><span class="t-num">KL987842</span></div>
+<div class="ticket" onclick="T(this,'KL987863')"><span class="t-icon">🎟️</span><span class="t-num">KL987863</span></div>
+<div class="ticket" onclick="T(this,'KL987883')"><span class="t-icon">🎟️</span><span class="t-num">KL987883</span></div>
+<div class="ticket" onclick="T(this,'KL987103')"><span class="t-icon">🎟️</span><span class="t-num">KL987103</span></div>
+<div class="ticket" onclick="T(this,'KL987124')"><span class="t-icon">🎟️</span><span class="t-num">KL987124</span></div>
+<div class="ticket" onclick="T(this,'KL248918')"><span class="t-icon">🎟️</span><span class="t-num">KL248918</span></div>
+<div class="ticket" onclick="T(this,'KL074252')"><span class="t-icon">🎟️</span><span class="t-num">KL074252</span></div>
+<div class="ticket" onclick="T(this,'KL949345')"><span class="t-icon">🎟️</span><span class="t-num">KL949345</span></div>
+<div class="ticket" onclick="T(this,'KL716637')"><span class="t-icon">🎟️</span><span class="t-num">KL716637</span></div>
+<div class="ticket" onclick="T(this,'KL332233')"><span class="t-icon">🎟️</span><span class="t-num">KL332233</span></div>
+<div class="ticket" onclick="T(this,'KL912802')"><span class="t-icon">🎟️</span><span class="t-num">KL912802</span></div>
+<div class="ticket" onclick="T(this,'KL675249')"><span class="t-icon">🎟️</span><span class="t-num">KL675249</span></div>
+<div class="ticket" onclick="T(this,'KL817262')"><span class="t-icon">🎟️</span><span class="t-num">KL817262</span></div>
+<div class="ticket" onclick="T(this,'KL479630')"><span class="t-icon">🎟️</span><span class="t-num">KL479630</span></div>
+<div class="ticket" onclick="T(this,'KL944274')"><span class="t-icon">🎟️</span><span class="t-num">KL944274</span></div>
+<div class="ticket" onclick="T(this,'KL618322')"><span class="t-icon">🎟️</span><span class="t-num">KL618322</span></div>
+<div class="ticket" onclick="T(this,'KL454216')"><span class="t-icon">🎟️</span><span class="t-num">KL454216</span></div>
+<div class="ticket" onclick="T(this,'KL161202')"><span class="t-icon">🎟️</span><span class="t-num">KL161202</span></div>
+<div class="ticket" onclick="T(this,'KL526324')"><span class="t-icon">🎟️</span><span class="t-num">KL526324</span></div>
+<div class="ticket" onclick="T(this,'KL614273')"><span class="t-icon">🎟️</span><span class="t-num">KL614273</span></div>
+<div class="ticket" onclick="T(this,'KL267082')"><span class="t-icon">🎟️</span><span class="t-num">KL267082</span></div>
+<div class="ticket" onclick="T(this,'KL295421')"><span class="t-icon">🎟️</span><span class="t-num">KL295421</span></div>
+<div class="ticket" onclick="T(this,'KL779849')"><span class="t-icon">🎟️</span><span class="t-num">KL779849</span></div>
+<div class="ticket" onclick="T(this,'KL866288')"><span class="t-icon">🎟️</span><span class="t-num">KL866288</span></div>
+<div class="ticket" onclick="T(this,'KL733394')"><span class="t-icon">🎟️</span><span class="t-num">KL733394</span></div>
+<div class="ticket" onclick="T(this,'KL539300')"><span class="t-icon">🎟️</span><span class="t-num">KL539300</span></div>
+<div class="ticket" onclick="T(this,'KL535058')"><span class="t-icon">🎟️</span><span class="t-num">KL535058</span></div>
+<div class="ticket" onclick="T(this,'KL963831')"><span class="t-icon">🎟️</span><span class="t-num">KL963831</span></div>
+<div class="ticket" onclick="T(this,'KL405610')"><span class="t-icon">🎟️</span><span class="t-num">KL405610</span></div>
+<div class="ticket" onclick="T(this,'KL510248')"><span class="t-icon">🎟️</span><span class="t-num">KL510248</span></div>
+<div class="ticket" onclick="T(this,'KL227836')"><span class="t-icon">🎟️</span><span class="t-num">KL227836</span></div>
+<div class="ticket" onclick="T(this,'KL620329')"><span class="t-icon">🎟️</span><span class="t-num">KL620329</span></div>
+<div class="ticket" onclick="T(this,'KL980329')"><span class="t-icon">🎟️</span><span class="t-num">KL980329</span></div>
+<div class="ticket" onclick="T(this,'KL980776')"><span class="t-icon">🎟️</span><span class="t-num">KL980776</span></div>
+<div class="ticket" onclick="T(this,'KL903622')"><span class="t-icon">🎟️</span><span class="t-num">KL903622</span></div>
+<div class="ticket" onclick="T(this,'KL215010')"><span class="t-icon">🎟️</span><span class="t-num">KL215010</span></div>
+<div class="ticket" onclick="T(this,'KL125867')"><span class="t-icon">🎟️</span><span class="t-num">KL125867</span></div>
+<div class="ticket" onclick="T(this,'KL126579')"><span class="t-icon">🎟️</span><span class="t-num">KL126579</span></div>
+<div class="ticket" onclick="T(this,'KL858867')"><span class="t-icon">🎟️</span><span class="t-num">KL858867</span></div>
+<div class="ticket" onclick="T(this,'KL100019')"><span class="t-icon">🎟️</span><span class="t-num">KL100019</span></div>
+<div class="ticket" onclick="T(this,'KL130416')"><span class="t-icon">🎟️</span><span class="t-num">KL130416</span></div>
+<div class="ticket" onclick="T(this,'KL108989')"><span class="t-icon">🎟️</span><span class="t-num">KL108989</span></div>
+<div class="ticket" onclick="T(this,'KL301618')"><span class="t-icon">🎟️</span><span class="t-num">KL301618</span></div>
+<div class="ticket" onclick="T(this,'KL936178')"><span class="t-icon">🎟️</span><span class="t-num">KL936178</span></div>
+<div class="ticket" onclick="T(this,'KL313773')"><span class="t-icon">🎟️</span><span class="t-num">KL313773</span></div>
+<div class="ticket" onclick="T(this,'KL043173')"><span class="t-icon">🎟️</span><span class="t-num">KL043173</span></div>
+<div class="ticket" onclick="T(this,'KL007720')"><span class="t-icon">🎟️</span><span class="t-num">KL007720</span></div>
+<div class="ticket" onclick="T(this,'KL179267')"><span class="t-icon">🎟️</span><span class="t-num">KL179267</span></div>
+<div class="ticket" onclick="T(this,'KL285336')"><span class="t-icon">🎟️</span><span class="t-num">KL285336</span></div>
+<div class="ticket" onclick="T(this,'KL595703')"><span class="t-icon">🎟️</span><span class="t-num">KL595703</span></div>
+<div class="ticket" onclick="T(this,'KL460391')"><span class="t-icon">🎟️</span><span class="t-num">KL460391</span></div>
+<div class="ticket" onclick="T(this,'KL429687')"><span class="t-icon">🎟️</span><span class="t-num">KL429687</span></div>
+<div class="ticket" onclick="T(this,'KL276047')"><span class="t-icon">🎟️</span><span class="t-num">KL276047</span></div>
+<div class="ticket" onclick="T(this,'KL623396')"><span class="t-icon">🎟️</span><span class="t-num">KL623396</span></div>
+<div class="ticket" onclick="T(this,'KL439060')"><span class="t-icon">🎟️</span><span class="t-num">KL439060</span></div>
+<div class="ticket" onclick="T(this,'KL304859')"><span class="t-icon">🎟️</span><span class="t-num">KL304859</span></div>
+<div class="ticket" onclick="T(this,'KL984451')"><span class="t-icon">🎟️</span><span class="t-num">KL984451</span></div>
+<div class="ticket" onclick="T(this,'KL471471')"><span class="t-icon">🎟️</span><span class="t-num">KL471471</span></div>
+<div class="ticket" onclick="T(this,'KL864614')"><span class="t-icon">🎟️</span><span class="t-num">KL864614</span></div>
+<div class="ticket" onclick="T(this,'KL139614')"><span class="t-icon">🎟️</span><span class="t-num">KL139614</span></div>
+<div class="ticket" onclick="T(this,'KL968058')"><span class="t-icon">🎟️</span><span class="t-num">KL968058</span></div>
+<div class="ticket" onclick="T(this,'KL134215')"><span class="t-icon">🎟️</span><span class="t-num">KL134215</span></div>
+<div class="ticket" onclick="T(this,'KL359431')"><span class="t-icon">🎟️</span><span class="t-num">KL359431</span></div>
+<div class="ticket" onclick="T(this,'KL529865')"><span class="t-icon">🎟️</span><span class="t-num">KL529865</span></div>
+<div class="ticket" onclick="T(this,'KL040333')"><span class="t-icon">🎟️</span><span class="t-num">KL040333</span></div>
+<div class="ticket" onclick="T(this,'KL173463')"><span class="t-icon">🎟️</span><span class="t-num">KL173463</span></div>
+<div class="ticket" onclick="T(this,'KL635378')"><span class="t-icon">🎟️</span><span class="t-num">KL635378</span></div>
+<div class="ticket" onclick="T(this,'KL394181')"><span class="t-icon">🎟️</span><span class="t-num">KL394181</span></div>
+<div class="ticket" onclick="T(this,'KL711816')"><span class="t-icon">🎟️</span><span class="t-num">KL711816</span></div>
+<div class="ticket" onclick="T(this,'KL933251')"><span class="t-icon">🎟️</span><span class="t-num">KL933251</span></div>
+<div class="ticket" onclick="T(this,'KL417346')"><span class="t-icon">🎟️</span><span class="t-num">KL417346</span></div>
+<div class="ticket" onclick="T(this,'KL309256')"><span class="t-icon">🎟️</span><span class="t-num">KL309256</span></div>
+<div class="ticket" onclick="T(this,'KL879531')"><span class="t-icon">🎟️</span><span class="t-num">KL879531</span></div>
+<div class="ticket" onclick="T(this,'KL986991')"><span class="t-icon">🎟️</span><span class="t-num">KL986991</span></div>
+<div class="ticket" onclick="T(this,'KL741924')"><span class="t-icon">🎟️</span><span class="t-num">KL741924</span></div>
+<div class="ticket" onclick="T(this,'KL717542')"><span class="t-icon">🎟️</span><span class="t-num">KL717542</span></div>
+<div class="ticket" onclick="T(this,'KL302333')"><span class="t-icon">🎟️</span><span class="t-num">KL302333</span></div>
+<div class="ticket" onclick="T(this,'KL361982')"><span class="t-icon">🎟️</span><span class="t-num">KL361982</span></div>
+<div class="ticket" onclick="T(this,'KL065418')"><span class="t-icon">🎟️</span><span class="t-num">KL065418</span></div>
+<div class="ticket" onclick="T(this,'KL971935')"><span class="t-icon">🎟️</span><span class="t-num">KL971935</span></div>
+<div class="ticket" onclick="T(this,'KL086630')"><span class="t-icon">🎟️</span><span class="t-num">KL086630</span></div>
+<div class="ticket" onclick="T(this,'KL169326')"><span class="t-icon">🎟️</span><span class="t-num">KL169326</span></div>
+<div class="ticket" onclick="T(this,'KL721371')"><span class="t-icon">🎟️</span><span class="t-num">KL721371</span></div>
+<div class="ticket" onclick="T(this,'KL987240')"><span class="t-icon">🎟️</span><span class="t-num">KL987240</span></div>
+<div class="ticket" onclick="T(this,'KL195325')"><span class="t-icon">🎟️</span><span class="t-num">KL195325</span></div>
+<div class="ticket" onclick="T(this,'KL897240')"><span class="t-icon">🎟️</span><span class="t-num">KL897240</span></div>
+<div class="ticket" onclick="T(this,'KL251586')"><span class="t-icon">🎟️</span><span class="t-num">KL251586</span></div>
+<div class="ticket" onclick="T(this,'KL171371')"><span class="t-icon">🎟️</span><span class="t-num">KL171371</span></div>
+<div class="ticket" onclick="T(this,'KL103827')"><span class="t-icon">🎟️</span><span class="t-num">KL103827</span></div>
+<div class="ticket" onclick="T(this,'KL205827')"><span class="t-icon">🎟️</span><span class="t-num">KL205827</span></div>
+<div class="ticket" onclick="T(this,'KL538576')"><span class="t-icon">🎟️</span><span class="t-num">KL538576</span></div>
+<div class="ticket" onclick="T(this,'KL204815')"><span class="t-icon">🎟️</span><span class="t-num">KL204815</span></div>
+<div class="ticket" onclick="T(this,'KL708641')"><span class="t-icon">🎟️</span><span class="t-num">KL708641</span></div>
+<div class="ticket" onclick="T(this,'KL592546')"><span class="t-icon">🎟️</span><span class="t-num">KL592546</span></div>
+<div class="ticket" onclick="T(this,'KL305178')"><span class="t-icon">🎟️</span><span class="t-num">KL305178</span></div>
+<div class="ticket" onclick="T(this,'KL601942')"><span class="t-icon">🎟️</span><span class="t-num">KL601942</span></div>
+<div class="ticket" onclick="T(this,'KL254619')"><span class="t-icon">🎟️</span><span class="t-num">KL254619</span></div>
+<div class="ticket" onclick="T(this,'KL681320')"><span class="t-icon">🎟️</span><span class="t-num">KL681320</span></div>
+<div class="ticket" onclick="T(this,'KL407395')"><span class="t-icon">🎟️</span><span class="t-num">KL407395</span></div>
+<div class="ticket" onclick="T(this,'KL631725')"><span class="t-icon">🎟️</span><span class="t-num">KL631725</span></div>
+<div class="ticket" onclick="T(this,'KL681372')"><span class="t-icon">🎟️</span><span class="t-num">KL681372</span></div>
+<div class="ticket" onclick="T(this,'KL695210')"><span class="t-icon">🎟️</span><span class="t-num">KL695210</span></div>
+<div class="ticket" onclick="T(this,'KL109578')"><span class="t-icon">🎟️</span><span class="t-num">KL109578</span></div>
+<div class="ticket" onclick="T(this,'KL513947')"><span class="t-icon">🎟️</span><span class="t-num">KL513947</span></div>
+<div class="ticket" onclick="T(this,'KL789523')"><span class="t-icon">🎟️</span><span class="t-num">KL789523</span></div>
+<div class="ticket" onclick="T(this,'KL542980')"><span class="t-icon">🎟️</span><span class="t-num">KL542980</span></div>
+<div class="ticket" onclick="T(this,'KL101299')"><span class="t-icon">🎟️</span><span class="t-num">KL101299</span></div>
+<div class="ticket" onclick="T(this,'KL267658')"><span class="t-icon">🎟️</span><span class="t-num">KL267658</span></div>
+<div class="ticket" onclick="T(this,'KL705178')"><span class="t-icon">🎟️</span><span class="t-num">KL705178</span></div>
+<div class="ticket" onclick="T(this,'KL275232')"><span class="t-icon">🎟️</span><span class="t-num">KL275232</span></div>
+<div class="ticket" onclick="T(this,'KL579462')"><span class="t-icon">🎟️</span><span class="t-num">KL579462</span></div>
+<div class="ticket" onclick="T(this,'KL208627')"><span class="t-icon">🎟️</span><span class="t-num">KL208627</span></div>
+<div class="ticket" onclick="T(this,'KL175920')"><span class="t-icon">🎟️</span><span class="t-num">KL175920</span></div>
+<div class="ticket" onclick="T(this,'KL175929')"><span class="t-icon">🎟️</span><span class="t-num">KL175929</span></div>
+<div class="ticket" onclick="T(this,'KL649230')"><span class="t-icon">🎟️</span><span class="t-num">KL649230</span></div>
+<div class="ticket" onclick="T(this,'KL894178')"><span class="t-icon">🎟️</span><span class="t-num">KL894178</span></div>
+<div class="ticket" onclick="T(this,'KL129423')"><span class="t-icon">🎟️</span><span class="t-num">KL129423</span></div>
+<div class="ticket" onclick="T(this,'KL108428')"><span class="t-icon">🎟️</span><span class="t-num">KL108428</span></div>
+<div class="ticket" onclick="T(this,'KL101265')"><span class="t-icon">🎟️</span><span class="t-num">KL101265</span></div>
+<div class="ticket" onclick="T(this,'KL102340')"><span class="t-icon">🎟️</span><span class="t-num">KL102340</span></div>
+<div class="ticket" onclick="T(this,'KL172866')"><span class="t-icon">🎟️</span><span class="t-num">KL172866</span></div>
+<div class="ticket" onclick="T(this,'KL272899')"><span class="t-icon">🎟️</span><span class="t-num">KL272899</span></div>
+<div class="ticket" onclick="T(this,'KL162510')"><span class="t-icon">🎟️</span><span class="t-num">KL162510</span></div>
+<div class="ticket" onclick="T(this,'KL290815')"><span class="t-icon">🎟️</span><span class="t-num">KL290815</span></div>
+<div class="ticket" onclick="T(this,'KL276501')"><span class="t-icon">🎟️</span><span class="t-num">KL276501</span></div>
+<div class="ticket" onclick="T(this,'KL540814')"><span class="t-icon">🎟️</span><span class="t-num">KL540814</span></div>
+<div class="ticket" onclick="T(this,'KL158279')"><span class="t-icon">🎟️</span><span class="t-num">KL158279</span></div>
+<div class="ticket" onclick="T(this,'KL203174')"><span class="t-icon">🎟️</span><span class="t-num">KL203174</span></div>
+<div class="ticket" onclick="T(this,'KL307645')"><span class="t-icon">🎟️</span><span class="t-num">KL307645</span></div>
+<div class="ticket" onclick="T(this,'KL542378')"><span class="t-icon">🎟️</span><span class="t-num">KL542378</span></div>
+<div class="ticket" onclick="T(this,'KL224398')"><span class="t-icon">🎟️</span><span class="t-num">KL224398</span></div>
+<div class="ticket" onclick="T(this,'KL554870')"><span class="t-icon">🎟️</span><span class="t-num">KL554870</span></div>
+<div class="ticket" onclick="T(this,'KL356416')"><span class="t-icon">🎟️</span><span class="t-num">KL356416</span></div>
+<div class="ticket" onclick="T(this,'KL541367')"><span class="t-icon">🎟️</span><span class="t-num">KL541367</span></div>
+<div class="ticket" onclick="T(this,'KL615289')"><span class="t-icon">🎟️</span><span class="t-num">KL615289</span></div>
+<div class="ticket" onclick="T(this,'KL266544')"><span class="t-icon">🎟️</span><span class="t-num">KL266544</span></div>
+<div class="ticket" onclick="T(this,'KL989898')"><span class="t-icon">🎟️</span><span class="t-num">KL989898</span></div>
+<div class="ticket" onclick="T(this,'KL985265')"><span class="t-icon">🎟️</span><span class="t-num">KL985265</span></div>
+<div class="ticket" onclick="T(this,'KL556255')"><span class="t-icon">🎟️</span><span class="t-num">KL556255</span></div>
+<div class="ticket" onclick="T(this,'KL545177')"><span class="t-icon">🎟️</span><span class="t-num">KL545177</span></div>
+<div class="ticket" onclick="T(this,'KL817979')"><span class="t-icon">🎟️</span><span class="t-num">KL817979</span></div>
+<div class="ticket" onclick="T(this,'KL629898')"><span class="t-icon">🎟️</span><span class="t-num">KL629898</span></div>
+    </div>
+
+    <div class="chips-wrap" id="chipsWrap"></div>
+    <div class="warn-box" id="warnBox">⚠️ Minimum 3 tickets select karna zaroori hai!</div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-card">
+    <div class="srow">
+      <span class="sl">Selected Tickets</span>
+      <span class="sv" id="countDisplay">0</span>
+    </div>
+    <div class="srow">
+      <span class="sl">Per Ticket Price</span>
+      <span class="sv">₹40</span>
+    </div>
+    <div class="srow stotal">
+      <span class="sl">💰 Total Amount</span>
+      <span class="sv" id="totalDisplay">₹0</span>
+    </div>
+  </div>
+
+  <!-- WA BUTTON -->
+  <button class="wa-btn" onclick="submitWA()">
+    <span class="wa-icon">📲</span>
+    WhatsApp Par Book Karein
+  </button>
+
+  <!-- TRUST -->
+  <div class="trust-row">
+    <div class="trust-item">🔒 Secure Payment</div>
+    <div class="trust-item">✅ Official Draw</div>
+    <div class="trust-item">⚡ Instant Confirm</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="pay-section">
+    <div class="pay-label">🔒 Secure Payment via</div>
+    <div class="pay-row">
+      <div class="pay-chip">📱 GPay</div>
+      <div class="pay-chip">📲 PhonePe</div>
+      <div class="pay-chip">💳 Paytm</div>
+    </div>
+  </div>
+
+  <div class="notice-box">
+    ⚠️ <strong>Note:</strong> Minimum 3 Tickets book karna compulsory hai. Sirf VIP tickets abhi available hain. Offer sirf limited time ke liye hai.
+  </div>
+
+  <div class="footer">© 2026 Kerala State Lotteries Department · All rights reserved</div>
+
+</div>
+
+<!-- WA Float -->
+<a class="wa-float" href="https://wa.me/919849577296" target="_blank">
+  📲
+  <span class="wa-badge">!</span>
+</a>
+
+<script>
+const WA_NUM = '919849577296';
+const PRICE = 40;
+const MIN = 3;
+const sel = new Set();
+const allTickets = Array.from(document.querySelectorAll('.ticket'));
+document.getElementById('cbarTotal').textContent = '📋 Total: ' + allTickets.length;
+
+function T(el, num) {
+  if (sel.has(num)) {
+    sel.delete(num);
+    el.classList.remove('sel');
+  } else {
+    sel.add(num);
+    el.classList.add('sel');
+    spawnMini(el);
+  }
+  sync();
+}
+
+function sync() {
+  document.getElementById('countDisplay').textContent = sel.size;
+  document.getElementById('totalDisplay').textContent = '₹' + (sel.size * PRICE).toLocaleString('en-IN');
+  document.getElementById('cbarSel').textContent = '✅ Selected: ' + sel.size;
+  document.getElementById('warnBox').style.display = 'none';
+  renderChips();
+}
+
+function renderChips() {
+  const wrap = document.getElementById('chipsWrap');
+  wrap.innerHTML = '';
+  sel.forEach(n => {
+    const d = document.createElement('div');
+    d.className = 'chip';
+    d.innerHTML = '🎟️ ' + n + ' <span class="chip-rm" onclick="removeChip(\'' + n + '\')">✕</span>';
+    wrap.appendChild(d);
+  });
+}
+
+function removeChip(n) {
+  sel.delete(n);
+  allTickets.forEach(t => {
+    if (t.querySelector('.t-num').textContent.trim() === n) t.classList.remove('sel');
+  });
+  sync();
+}
+
+function filterTickets() {
+  const q = document.getElementById('searchBox').value.trim().toUpperCase().replace(/\s/g,'');
+  allTickets.forEach(t => {
+    const n = t.querySelector('.t-num').textContent.replace(/\s/g,'').toUpperCase();
+    t.style.display = (!q || n.includes(q)) ? '' : 'none';
+  });
+}
+
+let secs = 14 * 60 + 59;
+function tick() {
+  if (secs <= 0) secs = 14 * 60 + 59;
+  document.getElementById('t-h').textContent = String(Math.floor(secs / 3600)).padStart(2, '0');
+  document.getElementById('t-m').textContent = String(Math.floor((secs % 3600) / 60)).padStart(2, '0');
+  document.getElementById('t-s').textContent = String(secs % 60).padStart(2, '0');
+  secs--;
+}
+tick(); setInterval(tick, 1000);
+
+function submitWA() {
+  if (sel.size < MIN) {
+    const w = document.getElementById('warnBox');
+    w.style.display = 'block';
+    w.style.animation = 'none';
+    requestAnimationFrame(() => { w.style.animation = 'shake 0.4s ease'; });
+    return;
+  }
+  launchConfetti();
+  const list = Array.from(sel).join('\n');
+  const total = sel.size * PRICE;
+  const msg = encodeURIComponent(
+    '🏆 *KERALA ROYAL LOTTERY BOOKING*\n\n' +
+    '🎟️ *Selected Tickets (' + sel.size + '):*\n' + list + '\n\n' +
+    '💵 *Total: ₹' + total.toLocaleString('en-IN') + '*\n\n' +
+    '⚡ Please confirm my booking!'
+  );
+  setTimeout(() => { window.open('https://wa.me/' + WA_NUM + '?text=' + msg, '_blank'); }, 700);
+}
+
+function launchConfetti() {
+  const layer = document.getElementById('confettiLayer');
+  const cols = ['#c8a84b','#f0d080','#e8294a','#00d68f','#4499ff','#fff'];
+  for (let i = 0; i < 80; i++) {
+    const p = document.createElement('div');
+    p.className = 'cp';
+    const sz = 4 + Math.random() * 8;
+    p.style.cssText = 'left:' + Math.random() * 100 + '%;background:' + cols[~~(Math.random() * cols.length)] + ';width:' + sz + 'px;height:' + sz + 'px;border-radius:' + (Math.random() > 0.5 ? '50%' : '3px') + ';animation-duration:' + (1.5 + Math.random() * 2) + 's;animation-delay:' + (Math.random() * 0.5) + 's;position:absolute;';
+    layer.appendChild(p);
+    setTimeout(() => p.remove(), 3500);
+  }
+}
+
+function spawnMini(el) {
+  const r = el.getBoundingClientRect();
+  const cx = r.left + r.width / 2;
+  const cy = r.top + r.height / 2;
+  const layer = document.getElementById('confettiLayer');
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('div');
+    const a = (i / 8) * Math.PI * 2;
+    const d = 18 + Math.random() * 18;
+    p.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:5px;height:5px;border-radius:50%;background:var(--royal);pointer-events:none;z-index:9999;transition:all .5s ease-out;opacity:1;';
+    layer.appendChild(p);
+    requestAnimationFrame(() => {
+      p.style.transform = 'translate(' + Math.cos(a) * d + 'px,' + Math.sin(a) * d + 'px)';
+      p.style.opacity = '0';
+    });
+    setTimeout(() => p.remove(), 600);
+  }
+}
+</script>
+</body>
+</html>
