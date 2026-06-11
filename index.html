@@ -941,8 +941,7 @@ function submitWA() {
     '🎟️ *Selected Tickets (' + sel.size + '):*\n' + list + '\n\n' +
     '💵 *Total: ₹' + total.toLocaleString('en-IN') + '*\n\n' +
     '⚡ Please confirm my booking!'
-  );
-  setTimeout(() => { window.open('https://wa.me/' + WA_NUM + '?text=' + msg, '_blank'); }, 700);
+  );window.open('https://wa.me/'+WA+'?text='+msg,'_blank'); }, 700);
 }
 
 function launchConfetti() {
