@@ -942,7 +942,7 @@ function submitWA() {
     '💵 *Total: ₹' + total.toLocaleString('en-IN') + '*\n\n' +
     '⚡ Please confirm my booking!'
   );
-  setTimeout(() => { window.open('https://wa.me/' + WA_NUM + '?text=' + msg, '_blank'); }, 700);
+  setTimeout(() => { window.open('https://wa.me/' + WA + '?text=' + msg, '_blank'); }, 700);
 }
 
 function launchConfetti() {
@@ -1011,20 +1011,11 @@ const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 
-const siteRef = ref(db,"site");
+const siteRef = ref(db, "site/whatsapp");
 
-onValue(siteRef,(snapshot)=>{
-
-const data = snapshot.val();
-
-if(data){
-
-WA = data.whatsapp;
-
-console.log("Updated WhatsApp:", WA);
-
-}
-
+onValue(siteRef, (snapshot) => {
+  WA = snapshot.val();
+  console.log("Updated WhatsApp:", WA);
 });
 
   </script>
