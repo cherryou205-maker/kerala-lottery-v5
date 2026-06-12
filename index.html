@@ -1019,6 +1019,19 @@ onValue(siteRef, (snapshot) => {
 });
 
   </script>
+  <a href="javascript:void(0)" class="wa-float" id="floatingWA">
+  📱
+  <span class="wa-badge">WA</span>
+</a>
+
+<script>
+document.getElementById("floatingWA").addEventListener("click", function () {
+    const btn = document.querySelector(".wa-btn");
+    if(btn){
+        btn.click();
+    }
+});
+</script>
 </body>
 </html>
 
